@@ -2,6 +2,7 @@
 import { ArrowLeftOnRectangleIcon } from '@heroicons/react/24/outline';
 import { collection, orderBy, query } from 'firebase/firestore';
 import { signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { db } from '../firebase';
 import ChatRow from './ChatRow';
@@ -20,7 +21,7 @@ function SideBar() {
   );
 
   return (
-    <div className="p-2 flex flex-col h-screen">
+    <div className="py-2 px-[10px] md:px-[20px] flex flex-col h-screen ">
       <div className="flex-1">
         <div>
           {/* New chat */}
@@ -47,11 +48,13 @@ function SideBar() {
 
       {session && (
         <div className="text-white flex flex-col justify-center items-center mb-[20px]">
-          <img
-            src={session.user?.image!}
-            alt="profile_pic"
-            className="h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50"
-          />
+          <Link href='/'>
+              <img
+                src={session.user?.image!}
+                alt="profile_pic"
+                className="h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50"
+              />
+          </Link>
           <div className="flex items-center space-x-[5px] hover:opacity-50 cursor-pointer">
             <p onClick={() => signOut()} className="">
               Sign Out
