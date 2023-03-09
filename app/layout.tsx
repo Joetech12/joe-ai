@@ -10,7 +10,6 @@ import {
   Bars3Icon,
   HomeIcon,
 } from '@heroicons/react/24/outline';
-import SideToggle from '../components/sideToggle';
 import Link from 'next/link';
 
 export const metadata = {
