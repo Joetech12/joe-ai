@@ -21,7 +21,7 @@ function SideBar() {
   );
 
   return (
-    <div className="py-2 px-[10px] md:px-[20px] flex flex-col h-screen ">
+    <div className="py-2 px-[10px] md:px-[20px] flex flex-col h-screen md:min-w-[20rem]">
       <div className="flex-1">
         <div>
           {/* New chat */}

@@ -33,7 +33,8 @@ export default async function handler(
     user: {
       _id: 'JoeAI',
       name: 'JoeAI',
-      avatar: 'https://links.papareact.com/89k',
+      avatar: '/joetech_logo.png',
+      //   avatar: 'https://links.papareact.com/89k',
     },
   };
 
