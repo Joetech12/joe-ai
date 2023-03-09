@@ -72,10 +72,10 @@ const ChatInput = ({ chatId }: Props) => {
   };
 
   return (
-    <div className="bg-black/60 text-gray-400 text-sm ">
+    <div className="bg-black/60 text-gray-400">
       <form onSubmit={sendMessage} className="p-5 space-x-5 flex">
         <input
-          className="focus:outline-none bg-transparent flex-1 disabled:cursor-not-allowed disabled:text-gray-300"
+          className="focus:outline-none bg-transparent text flex-1 disabled:cursor-not-allowed disabled:text-gray-300"
           disabled={!session}
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}

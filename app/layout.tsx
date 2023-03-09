@@ -5,7 +5,13 @@ import { authOptions } from '../pages/api/auth/[...nextauth]';
 import '../styles/globals.css';
 import Login from '../components/Login';
 import ClientProvider from '../components/ClientProvider';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import {
+  ArrowLeftOnRectangleIcon,
+  Bars3Icon,
+  HomeIcon,
+} from '@heroicons/react/24/outline';
+import SideToggle from '../components/sideToggle';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'JoeAI',
@@ -18,7 +24,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const session = await getServerSession(authOptions);
-  
 
   return (
     <html lang="en">
@@ -34,9 +39,7 @@ export default async function RootLayout({
 
               <ClientProvider />
 
-              <div className="bg-[#343541] flex-1">
-                {children}
-              </div>
+              <div className="bg-[#343541] flex-1">{children}</div>
             </div>
           )}
         </SessionProvider>
