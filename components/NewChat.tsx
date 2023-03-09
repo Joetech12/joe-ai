@@ -25,9 +25,9 @@ const NewChat = () => {
   };
 
   return (
-    <div onClick={createNewChat} className="border-gray-700 border chatRow">
-      <PlusIcon className="h-4 w-4" />
-      <p className='text-center'>New Chat</p>
+    <div onClick={createNewChat} className="border-gray-700 border-[2px] md:border-[1px] px-[80px] md:px-[40px] py-[20px] md:py-[10px] chatRow">
+      <PlusIcon className="h-6 md:h-4 w-6 md:w-4" />
+      <p className='text-center text-[18px] md:text-[16px]'>New Chat</p>
     </div>
   );
 };

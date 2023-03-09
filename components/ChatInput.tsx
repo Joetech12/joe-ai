@@ -92,7 +92,7 @@ const ChatInput = ({ chatId }: Props) => {
         </button>
       </form>
 
-      <div className="md:hidden">
+      <div className="hidden">
         <ModelSelection />
       </div>
     </div>

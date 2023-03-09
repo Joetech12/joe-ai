@@ -5,6 +5,7 @@ import { authOptions } from '../pages/api/auth/[...nextauth]';
 import '../styles/globals.css';
 import Login from '../components/Login';
 import ClientProvider from '../components/ClientProvider';
+import { Bars3Icon } from '@heroicons/react/24/outline';
 
 export const metadata = {
   title: 'JoeAI',
@@ -17,6 +18,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const session = await getServerSession(authOptions);
+  
 
   return (
     <html lang="en">
@@ -26,13 +28,15 @@ export default async function RootLayout({
             <Login />
           ) : (
             <div className="flex">
-              <div className="bg-[#0d0e15] hide md:flex md:max-w-xs md:h-screen overflow-y-auto  scrollbar-track-black/60 scrollbar-thumb-red-700/60 scrollbar-thin">
+              <div className="bg-[#0d0e15] hidden md:flex md:max-w-xs overflow-y-auto  scrollbar-track-black/60 scrollbar-thumb-red-700/60 scrollbar-thin">
                 <SideBar />
               </div>
 
               <ClientProvider />
 
-              <div className="bg-[#343541] flex-1">{children}</div>
+              <div className="bg-[#343541] flex-1">
+                {children}
+              </div>
             </div>
           )}
         </SessionProvider>
